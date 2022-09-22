@@ -39,9 +39,9 @@ function fight(stats1, stats2) {
     let winner = 0;
     while (hp1 > 0 && hp2 > 0) {
         if (turn % 2 == 0) {
-            hp2 -= Math.max(atk1 - def2, 0);
+            hp2 -= Math.max(atk1 * (1 / 1 + def2), 0);
         } else {
-            hp1 -= Math.max(atk2 - def1, 0);
+            hp1 -= Math.max(atk2 * (1 / 1 + def1), 0);
         }
         turn++;
     }
@@ -59,7 +59,7 @@ app.post('/result', (req, res) => {
     const { name1, name2 } = req.body;
     const hash1 = md5(name1);
     const hash2 = md5(name2);
-    console.log(hash1, hash2);
+    // console.log(hash1, hash2);
     const stats1 = {
         //set stats by hash
         hp: parseInt(hash1.substr(0, 2), 16),
@@ -84,5 +84,5 @@ app.post('/result', (req, res) => {
         stats2,
         winner: fight(stats1, stats2),
     };
-    res.send(result);
+    res.sendFile(__dirname + '/result.html');
 });

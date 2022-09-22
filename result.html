@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <!-- result page for md5 battle -->
+    <!-- install bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <!-- show result -->
+    <!-- 이름1: 이름1 -->
+    <!-- 이름2: 이름2 -->
+    <!-- 승자: 이름1 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>마법의 md5 배틀</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>결과</h2>
+                <p>이름1: {{name1}}</p>
+                <p>이름2: {{name2}}</p>
+                <p>승자: {{winner}}</p>
+            </div>
+        </div>
+    </div>
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        /*gradient and bold on h1 tag*/
+        h1 {
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        .carousel-item img {
+            height: 500px;
+        }
+    </style>
+</body>
+</html>
